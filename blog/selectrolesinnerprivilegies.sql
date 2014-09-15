@@ -1,0 +1,1 @@
+INSERT INTO DBO.roletoprivilege (role,privileges)values ('3','1'),('3','2')

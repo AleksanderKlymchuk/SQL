@@ -1,0 +1,1 @@
+INSERT INTO dbo.Role (RoleName) VALUES ('amdin'),('author'),('commentator');

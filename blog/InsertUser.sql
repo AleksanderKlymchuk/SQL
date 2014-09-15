@@ -1,0 +1,1 @@
+INSERT INTO dbo.Users (FirstName,LastName,Email,DateOfRegistering) VALUES ('Oleksandr','Klymchuk','olkly@gmail.com','02/09/2014');

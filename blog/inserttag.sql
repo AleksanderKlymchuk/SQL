@@ -1,0 +1,1 @@
+INSERT INTO dbo.Tag (Tag) VALUES ('Twitter activity'),('Income by air'),('Interest on mortgages'),('Profit straight away'),('Debit'),('Holiday in Denmark'),('Baby and happiness'),('Toy from nature'),('Job online'),('Courses for unemployed'),('Analysis'),('Political Opinion'),('Football'),('World Cup')

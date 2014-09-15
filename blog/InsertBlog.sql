@@ -1,0 +1,1 @@
+INSERT INTO dbo.blog(title,userid,[content],statusid) values ('Celebrity babies','2','Simon Cowell has revealed that he would like to have a second child with his girlfriend Lauren Silverman. The X Factor judge, 54, made the comment ahead of Saturday nights','1')

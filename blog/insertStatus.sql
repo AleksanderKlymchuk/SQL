@@ -1,0 +1,1 @@
+INSERT INTO dbo.Status (status)VALUES('pending'),('published'),('archived'),('hidden')
