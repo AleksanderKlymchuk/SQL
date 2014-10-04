@@ -1,10 +1,11 @@
 CREATE PROCEDURE blogscript
 AS
 BEGIN
+BEGIN TRANSACTION 
 CREATE TABLE STATUSES
 (
   S_id int not null IDENTITY (1,1) PRIMARY KEY,
-  [Status] varchar (255)
+  [Status] varchar (255) not null
 
 )
 CREATE TABLE BLOGGERS
@@ -13,15 +14,15 @@ CREATE TABLE BLOGGERS
   LastName varchar (255) not null,
   Email varchar (255) not null,
   Photo varchar (255),
-  Dateofregistering date DEFAULT GETDATE(),
+  Dateofregistering date DEFAULT GETDATE() not null,
 )
 CREATE TABLE BLOG_POST
 ( BP_id int not null IDENTITY (1,1) PRIMARY KEY,
   Title varchar (255) not null,
-  Content nvarchar(max),
+  Content nvarchar(max) not null,
   Photo varchar (255),
-  Date_of_creation datetime DEFAULT GETDATE(),
-  Date_of_update datetime, 
+  Date_of_creation  datetime DEFAULT GETDATE() not null,
+  Date_of_update DATETIME, 
   S_id int not null default 1 FOREIGN KEY REFERENCES STATUSES(S_id),
   B_id int not null FOREIGN KEY REFERENCES BLOGGERS (B_id)
 )
@@ -44,7 +45,7 @@ CREATE TABLE BLOG_TO_CATEGORY
 CREATE TABLE TAGS
 (
   T_id int not null IDENTITY (1,1) PRIMARY KEY,
-  Tag varchar (255)
+  Tag varchar  (255)not null
 ) 
 
 CREATE TABLE Blog_To_Tag
@@ -88,8 +89,8 @@ CREATE TABLE BlogUpdate
    Activity varchar(20) not null
 
 )
-
-
+COMMIT
+END
 
 BEGIN TRY
 
@@ -109,4 +110,3 @@ BEGIN CATCH
   ROLLBACK TRANSACTION
   PRINT 'TRANSACTION ROLLBACKED'
 END CATCH 
-END
